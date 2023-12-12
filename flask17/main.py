@@ -57,7 +57,7 @@ def create():
     if request.method == 'POST':
         # Создание нового профиля
         new_profile = {
-            "id": random.randrange(1, 100_000),  # Предполагается, что у вас есть функция для генерации уникального ID
+            "id": random.randrange(99,99999),  # Предполагается, что у вас есть функция для генерации уникального ID
             'login': request.form['login'],
             'cash': request.form['cash'],
             'nationality': request.form['nationality'],
