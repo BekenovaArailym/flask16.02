@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<a class="btn btn-primary mt-5" href="{{ url_for('index') }}"> Back </a>
+
+<hr>
+    <h1>{{ profile.get("id") }}: {{profile.get("login")}}</h1>
+    <h2>Cash: {{ profile.get("cash")}}</h2>
+    <h2>Nationality: {{ profile.get("nationality")}}</h2>
+    <h2>Country: {{ profile.get("country")}}</h2>
+    <h2>Language: {{ profile.get("language")}}</h2>
+<hr>
+<h3>Ты уверен что хочешь удалить свой акк??</h3>
+<form method="POST">
+    <input class="btn btn-danger" type="submit" value="Да">
+</form>
+
+
+{% endblock %}

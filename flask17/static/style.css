@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+    font-size: 20px;
+    color:aquamarine;
+}
+
+footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    color:rgb(42, 75, 57);
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #80af90;
+
+}
+
+.container {
+    flex: 1;
+}
+
+.footer-bottom {
+    background-color: #98c5b4;
+    padding: 20px;
+    text-align: center;
+}
