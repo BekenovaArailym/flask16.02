@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST" action="{{ url_for('update_profile', id=profile.get('id')) }}">
+    <input type="text" name="id" placeholder="Введите ID" value="{{ profile.get('id') }}" readonly>
+    <input type="text" name="login" placeholder="Введите LOGIN" value="{{ profile.get('login') }}">
+    <input type="text" name="cash" placeholder="Введите CASH" value="{{ profile.get('cash') }}">
+    <input type="text" name="nationality" placeholder="Введите NATIONALITY" value="{{ profile.get('nationality') }}">
+    <input type="text" name="country" placeholder="Введите COUNTRY" value="{{ profile.get('country') }}">
+    <input type="text" name="language" placeholder="Введите LANGUAGE" value="{{ profile.get('language') }}">
+    <button type="submit" class="btn btn-success">Обновить профиль</button>
+</form>
+
+<a class="btn btn-primary" href="{{ url_for('index') }}"> Back </a>
+
+<h1>{{ profile.get("id") }}: {{ profile.get("login") }}</h1>
+<h2>Cash: {{ profile.get("cash") }}</h2>
+<h2>Nationality: {{ profile.get("nationality") }}</h2>
+<h2>Country: {{ profile.get("country") }}</h2>
+<h2>Language: {{ profile.get("language") }}</h2>
+
+{% endblock %}
+
