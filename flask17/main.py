@@ -24,7 +24,7 @@ def update(id):
     for profile in profiles:
         if profile.get("id") == id:
             if request.method == 'POST':
-                # Обработка данных формы и обновление профиля
+                
                 profile['login'] = request.form['login']
                 profile['cash'] = request.form['cash']
                 profile['nationality'] = request.form['nationality']
@@ -37,7 +37,7 @@ def update(id):
                 return render_template("update.html", profile=profile)
 
     return redirect(url_for('error'))
-#######################
+
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
     profiles = f.get_profiles()
@@ -55,9 +55,9 @@ def delete(id):
 @app.route('/create', methods=['GET', 'POST'])
 def create():
     if request.method == 'POST':
-        # Создание нового профиля
+        
         new_profile = {
-            "id": random.randrange(99,99999),  # Предполагается, что у вас есть функция для генерации уникального ID
+            "id": random.randrange(99,99999),  
             'login': request.form['login'],
             'cash': request.form['cash'],
             'nationality': request.form['nationality'],
@@ -65,17 +65,17 @@ def create():
             'language': request.form['language']
         }
 
-        # Добавление нового профиля в список
+        
         profiles = f.get_profiles()
         profiles.append(new_profile)
 
-        # Сохранение обновленного списка профилей
+        
         f.set_profiles(profiles)
 
-        # Перенаправление на главную страницу
+       
         return redirect(url_for('index'))
     else:
-        return render_template("create.html", id=None)  # Передаем id=None при отображении формы создания
+        return render_template("create.html", id=None)  
 
 
 @app.route("/error")
